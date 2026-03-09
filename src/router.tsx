@@ -2,6 +2,12 @@ import { createBrowserRouter } from "react-router-dom"
 import App from "./App"
 import { DashboardPage } from "./pages/dashboard"
 import { PlaceholderPage } from "./pages/placeholder-page"
+import { StudentDetailsPage } from "./pages/student/details"
+import { StudentAdmissionPage } from "./pages/student/admission"
+import { StudentProfilePage } from "./pages/student/view"
+import { BulkDeleteStudentsPage } from "./pages/student/bulk-delete"
+import { ClassPage } from "./pages/academics/class"
+import { SectionsPage } from "./pages/academics/sections"
 
 export const router = createBrowserRouter([
     {
@@ -11,10 +17,11 @@ export const router = createBrowserRouter([
             { index: true, element: <DashboardPage /> },
 
             // Student
-            { path: "student/details", element: <PlaceholderPage title="Student Details" /> },
-            { path: "student/admission", element: <PlaceholderPage title="Student Admission" /> },
+            { path: "student/details", element: <StudentDetailsPage /> },
+            { path: "student/view/:id", element: <StudentProfilePage /> },
+            { path: "student/admission", element: <StudentAdmissionPage /> },
             { path: "student/disabled", element: <PlaceholderPage title="Disabled Students" /> },
-            { path: "student/bulk-delete", element: <PlaceholderPage title="Bulk Delete Students" /> },
+            { path: "student/bulk-delete", element: <BulkDeleteStudentsPage /> },
             { path: "student/edit", element: <PlaceholderPage title="Edit Student" /> },
 
             // Teacher
@@ -71,8 +78,8 @@ export const router = createBrowserRouter([
             { path: "academics/promote-students", element: <PlaceholderPage title="Promote Students" /> },
             { path: "academics/subject-group", element: <PlaceholderPage title="Subject Group" /> },
             { path: "academics/subject", element: <PlaceholderPage title="Subject" /> },
-            { path: "academics/class", element: <PlaceholderPage title="Class" /> },
-            { path: "academics/sections", element: <PlaceholderPage title="Sections" /> },
+            { path: "academics/class", element: <ClassPage /> },
+            { path: "academics/sections", element: <SectionsPage /> },
 
             // Human Resource
             { path: "hr/staff-directory", element: <PlaceholderPage title="Staff Directory" /> },
