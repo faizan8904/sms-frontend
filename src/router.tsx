@@ -2,12 +2,17 @@ import { createBrowserRouter } from "react-router-dom"
 import App from "./App"
 import { DashboardPage } from "./pages/dashboard"
 import { PlaceholderPage } from "./pages/placeholder-page"
-import { StudentDetailsPage } from "./pages/student/details"
-import { StudentAdmissionPage } from "./pages/student/admission"
-import { StudentProfilePage } from "./pages/student/view"
-import { BulkDeleteStudentsPage } from "./pages/student/bulk-delete"
 import { ClassPage } from "./pages/academics/class"
 import { SectionsPage } from "./pages/academics/sections"
+import { IdCardGeneratorPage } from "./pages/admin/IdCardGeneratorPage"
+import {
+    AdmissionPage,
+    BulkDeletePage,
+    DirectoryPage,
+    EditPage,
+    FormerRecordsPage,
+    StudentProfilePage,
+} from "./features/people/pages"
 
 export const router = createBrowserRouter([
     {
@@ -17,26 +22,29 @@ export const router = createBrowserRouter([
             { index: true, element: <DashboardPage /> },
 
             // Student
-            { path: "student/details", element: <StudentDetailsPage /> },
+            { path: "student/details", element: <DirectoryPage entity="student" /> },
             { path: "student/view/:id", element: <StudentProfilePage /> },
-            { path: "student/admission", element: <StudentAdmissionPage /> },
-            { path: "student/disabled", element: <PlaceholderPage title="Disabled Students" /> },
-            { path: "student/bulk-delete", element: <BulkDeleteStudentsPage /> },
-            { path: "student/edit", element: <PlaceholderPage title="Edit Student" /> },
+            { path: "student/admission", element: <AdmissionPage entity="student" /> },
+            { path: "student/former", element: <FormerRecordsPage entity="student" /> },
+            { path: "student/bulk-delete", element: <BulkDeletePage entity="student" /> },
+            { path: "student/edit", element: <EditPage entity="student" /> },
+            { path: "student/edit/:id", element: <EditPage entity="student" /> },
 
             // Teacher
-            { path: "teacher/details", element: <PlaceholderPage title="Teacher Details" /> },
-            { path: "teacher/admission", element: <PlaceholderPage title="Teacher Admission" /> },
-            { path: "teacher/disabled", element: <PlaceholderPage title="Disabled Teachers" /> },
-            { path: "teacher/bulk-delete", element: <PlaceholderPage title="Bulk Delete Teachers" /> },
-            { path: "teacher/edit", element: <PlaceholderPage title="Edit Teacher" /> },
+            { path: "teacher/details", element: <DirectoryPage entity="teacher" /> },
+            { path: "teacher/admission", element: <AdmissionPage entity="teacher" /> },
+            { path: "teacher/former", element: <FormerRecordsPage entity="teacher" /> },
+            { path: "teacher/bulk-delete", element: <BulkDeletePage entity="teacher" /> },
+            { path: "teacher/edit", element: <EditPage entity="teacher" /> },
+            { path: "teacher/edit/:id", element: <EditPage entity="teacher" /> },
 
             // Staff
-            { path: "staff/details", element: <PlaceholderPage title="Staff Details" /> },
-            { path: "staff/add", element: <PlaceholderPage title="Add Staff" /> },
-            { path: "staff/disabled", element: <PlaceholderPage title="Disabled Staff" /> },
-            { path: "staff/bulk-delete", element: <PlaceholderPage title="Bulk Delete Staff" /> },
-            { path: "staff/edit", element: <PlaceholderPage title="Edit Staff" /> },
+            { path: "staff/details", element: <DirectoryPage entity="staff" /> },
+            { path: "staff/add", element: <AdmissionPage entity="staff" /> },
+            { path: "staff/former", element: <FormerRecordsPage entity="staff" /> },
+            { path: "staff/bulk-delete", element: <BulkDeletePage entity="staff" /> },
+            { path: "staff/edit", element: <EditPage entity="staff" /> },
+            { path: "staff/edit/:id", element: <EditPage entity="staff" /> },
 
             // Fees
             { path: "fees/collect", element: <PlaceholderPage title="Collect Fee" /> },
@@ -118,7 +126,7 @@ export const router = createBrowserRouter([
             { path: "certificate/student-certificate", element: <PlaceholderPage title="Student Certificate" /> },
             { path: "certificate/generate-certificate", element: <PlaceholderPage title="Generate Certificate" /> },
             { path: "certificate/student-id-card", element: <PlaceholderPage title="Student ID Card" /> },
-            { path: "certificate/generate-id-card", element: <PlaceholderPage title="Generate ID Card" /> },
+            { path: "certificate/generate-id-card", element: <IdCardGeneratorPage /> },
             { path: "certificate/staff-id-card", element: <PlaceholderPage title="Staff ID Card" /> },
             { path: "certificate/generate-staff-id-card", element: <PlaceholderPage title="Generate Staff ID Card" /> },
 

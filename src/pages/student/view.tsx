@@ -6,7 +6,6 @@ import {
     User,
     ArrowLeft,
     Phone,
-    MapPin,
     BookOpen,
     ShieldAlert,
     Download,

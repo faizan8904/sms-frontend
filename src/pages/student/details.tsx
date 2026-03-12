@@ -2,9 +2,7 @@ import { useState, useMemo } from "react"
 import { Link } from "react-router-dom"
 import {
     Search,
-    Filter,
     Plus,
-    MoreHorizontal,
     Download,
     PenLine,
     Trash2,
@@ -14,8 +12,7 @@ import {
     User,
     UserMinus,
     CheckCircle2,
-    XCircle,
-    ChevronDown
+    XCircle
 } from "lucide-react"
 
 import { students } from "@/db/student_db"

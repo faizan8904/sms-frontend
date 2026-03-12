@@ -29,6 +29,7 @@ export interface MenuItem {
     children?: { label: string; path: string }[]
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const menuItems: MenuItem[] = [
     {
         label: "Dashboard",
@@ -41,7 +42,7 @@ export const menuItems: MenuItem[] = [
         children: [
             { label: "Student Details", path: "/student/details" },
             { label: "Student Admission", path: "/student/admission" },
-            { label: "Disabled Students", path: "/student/disabled" },
+            { label: "Former Students", path: "/student/former" },
             { label: "Bulk Delete", path: "/student/bulk-delete" },
             { label: "Edit Student", path: "/student/edit" },
         ],
@@ -52,7 +53,7 @@ export const menuItems: MenuItem[] = [
         children: [
             { label: "Teacher Details", path: "/teacher/details" },
             { label: "Teacher Admission", path: "/teacher/admission" },
-            { label: "Disabled Teachers", path: "/teacher/disabled" },
+            { label: "Former Teachers", path: "/teacher/former" },
             { label: "Bulk Delete", path: "/teacher/bulk-delete" },
             { label: "Edit Teacher", path: "/teacher/edit" },
         ],
@@ -63,7 +64,7 @@ export const menuItems: MenuItem[] = [
         children: [
             { label: "Staff Details", path: "/staff/details" },
             { label: "Add Staff", path: "/staff/add" },
-            { label: "Disabled Staff", path: "/staff/disabled" },
+            { label: "Former Staff", path: "/staff/former" },
             { label: "Bulk Delete", path: "/staff/bulk-delete" },
             { label: "Edit Staff", path: "/staff/edit" },
         ],

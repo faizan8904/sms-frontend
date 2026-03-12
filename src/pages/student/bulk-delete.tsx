@@ -2,7 +2,7 @@ import { useState } from "react"
 import { students } from "@/db/student_db"
 import { classes } from "@/db/class_db"
 import { sections } from "@/db/section_db"
-import { Trash2, AlertCircle, Search, Filter } from "lucide-react"
+import { Trash2, AlertCircle, Search } from "lucide-react"
 
 export function BulkDeleteStudentsPage() {
     const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())

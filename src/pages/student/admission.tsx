@@ -11,7 +11,7 @@ const studentSchema = z.object({
     middle_name: z.string().optional(),
     last_name: z.string().min(2, "Last name must be at least 2 characters"),
     date_of_birth: z.string().min(1, "Date of birth is required"),
-    gender: z.enum(["Male", "Female", "Other"], { required_error: "Gender is required" }),
+    gender: z.enum(["Male", "Female", "Other"]),
     roll_number: z.string().min(1, "Roll number is required"),
     class_id: z.string().min(1, "Class is required"),
     section_id: z.string().min(1, "Section is required"),
@@ -29,7 +29,7 @@ const studentSchema = z.object({
     enrollment_status: z.enum(["Active", "Inactive", "Graduated"]).default("Active")
 })
 
-type StudentFormValues = z.infer<typeof studentSchema>
+type StudentFormValues = z.input<typeof studentSchema>
 
 export function StudentAdmissionPage() {
     const navigate = useNavigate()
